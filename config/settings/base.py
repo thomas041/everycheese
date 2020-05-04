@@ -54,7 +54,6 @@ DATABASES = {
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
-
 # URLS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
@@ -83,7 +82,8 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "everycheese.users.apps.UsersConfig",
+    "everycheese.users.apps.UsersConfig",  # Custom users app
+    "everycheese.cheeses.apps.CheesesConfig",  # cheese info app
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -257,7 +257,7 @@ LOGGING = {
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s "
-            "%(process)d %(thread)d %(message)s"
+                      "%(process)d %(thread)d %(message)s"
         }
     },
     "handlers": {
